@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       const categoria = this.getAttribute("data-categoria");
       cargarIframe(categoria);
-      llenarTabla();
+      llenarTabla(productos);
     });
   });
 
@@ -179,7 +179,7 @@ function cargarCarrusel(productos) {
 }
 
 // Función para rellenar la tabla con los productos
-function llenarTabla() {
+function llenarTabla(productos) {
   const tabla = $('#tablaProductos tbody');
   tabla.empty(); // Limpiar la tabla antes de rellenar
 
