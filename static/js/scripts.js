@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const productos = [
     {
       nombre: "Producto 1",
-      imagen: "../static/img/colcha-individual.png",
+      imagen: "./static/img/colcha-individual.png",
       precio: "$100",
     },
     {
       nombre: "Producto 2",
-      imagen: "../static/img/colcha-matrimonial.png",
+      imagen: "./static/img/colcha-matrimonial.png",
       precio: "$150",
     },
     // Agrega más productos según sea necesario
