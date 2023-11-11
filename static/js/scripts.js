@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       const categoria = this.getAttribute("data-categoria");
       cargarIframe(categoria);
-      // Aquí llamamos a la función del carrusel con los productos específicos de la categoría
+      llenarTabla();
     });
   });
 
@@ -178,3 +178,20 @@ function cargarCarrusel(productos) {
   });
 }
 
+// Función para rellenar la tabla con los productos
+function llenarTabla() {
+  const tabla = $('#tablaProductos tbody');
+  tabla.empty(); // Limpiar la tabla antes de rellenar
+
+  productos.forEach(producto => {
+    const fila = `<tr>
+                    <td><img src="${producto.imagen}" alt="${producto.nombre}"></td>
+                    <td>${producto.nombre}</td>
+                    <td>${producto.precio}</td>
+                  </tr>`;
+    tabla.append(fila);
+  });
+
+  // Inicializar DataTables
+  $('#tablaProductos').DataTable();
+}
