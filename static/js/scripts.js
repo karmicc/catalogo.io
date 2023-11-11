@@ -90,7 +90,7 @@ function insertarHtmlEnCatalogo(html) {
 // Función para cargar dinámicamente el contenido de una categoría
 function cargarCategoria(categoria) {
   // Construye la ruta completa al archivo local.
-  const filePath = `../html/categories/${categoria}.html`;
+  const filePath = `./html/categories/${categoria}.html`;
 
   // Usa fetch con el modo 'no-cors' para evitar problemas CORS en local.
   fetch(filePath)
