@@ -15,13 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Agrega más productos según sea necesario
   ];
 
-  // Rellena el catálogo con los productos utilizando la función de creación
-  /* productos.forEach((producto) => {
-    const productoDiv = crearProducto(producto, () =>
-      mostrarDetalles(producto)
-    );
-    catalogo.appendChild(productoDiv);
-  }); */
+  // Guardar en sessionStorage
+  sessionStorage.setItem("productos", JSON.stringify(productos));
 
   // Obtener todos los enlaces de subcategoría
   const enlacesSubcategoria = document.querySelectorAll(".dropdown-item");
@@ -32,16 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
       const categoria = this.getAttribute("data-categoria");
       cargarIframe(categoria);
-      llenarTabla(productos);
     });
   });
 
-  const homeBtn = document.getElementById('goHome')
+  const homeBtn = document.getElementById("goHome");
 
-  homeBtn.addEventListener("click", function(e){
+  homeBtn.addEventListener("click", function (e) {
     cargarCarrusel(productos);
-  })
-
+  });
 
   cargarCarrusel(productos);
 });
@@ -178,20 +171,3 @@ function cargarCarrusel(productos) {
   });
 }
 
-// Función para rellenar la tabla con los productos
-function llenarTabla(productos) {
-  const tabla = $('#tablaProductos tbody');
-  tabla.empty(); // Limpiar la tabla antes de rellenar
-
-  productos.forEach(producto => {
-    const fila = `<tr>
-                    <td><img src="${producto.imagen}" alt="${producto.nombre}"></td>
-                    <td>${producto.nombre}</td>
-                    <td>${producto.precio}</td>
-                  </tr>`;
-    tabla.append(fila);
-  });
-
-  // Inicializar DataTables
-  $('#tablaProductos').DataTable();
-}
