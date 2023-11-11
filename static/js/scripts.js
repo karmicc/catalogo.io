@@ -108,7 +108,7 @@ function cargarCategoria(categoria) {
 
 function cargarIframe(categoria) {
   const iframe = document.createElement("iframe");
-  iframe.src = `../html/categories/${categoria}.html`;
+  iframe.src = `./html/categories/${categoria}.html`;
   iframe.width = "100%";
   iframe.height = "600px";
 
