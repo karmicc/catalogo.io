@@ -93,7 +93,7 @@ function cargarCategoria(categoria) {
   const filePath = `../html/categories/${categoria}.html`;
 
   // Usa fetch con el modo 'no-cors' para evitar problemas CORS en local.
-  fetch(filePath, { mode: "no-cors" })
+  fetch(filePath)
     .then((response) => response.text())
     .then((html) => {
       // Almacena el contenido en sessionStorage.
